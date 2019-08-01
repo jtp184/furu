@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Furu - Your Food Guru</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://staticresource.com/basic.css">
+    <style>
+      html {
+        font-family: 'Lato';
+      }
+
+      nav {
+        text-align: center;
+      }
+    </style>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <nav>
+      <%= link_to 'Recipes', recipes_path, 'data-button': 'grey' %>
+      <%= link_to 'Users', users_path, 'data-button': 'grey' %>
+      <%= link_to 'Log Out', log_out_path, method: :delete, 'data-button': 'grey' %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

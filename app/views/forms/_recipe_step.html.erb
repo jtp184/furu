@@ -1,0 +1,11 @@
+<%= form_for resource do |f| %>
+	<%= f.hidden_field :recipe_id, value: (resource.recipe_id || params[:recipe_id]) %>
+	<%= f.label :title %>
+	<%= f.text_field :title %> 
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+	<%= f.label :order %>
+	<%= f.number_field :order, min: 1, step: 1 %>
+
+	<%= f.submit %>
+<% end %>

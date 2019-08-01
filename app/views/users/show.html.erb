@@ -1,0 +1,9 @@
+<h1><%= @resource.username %></h1>
+<nav>
+	<% if current_user == @resource %>
+		
+	<%= link_to('Edit', edit_user_path(@resource), 'data-button': 'green')  %>
+	<%= link_to 'Delete', user_path(@resource), method: :delete, 'data-button': 'red' %>
+	<% end %>
+</nav>
+<%= render partial: 'shared/title_desc_table', locals: {resources: @resource.recipes.limit(10), caption: 'Recent Recipes' } %>

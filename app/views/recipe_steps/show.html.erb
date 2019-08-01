@@ -1,0 +1,9 @@
+<h1>Step <%= @resource.order %></h1>
+<h2><%= @resource.title %></h2>
+<p><%= @resource.description %></p>
+
+<footer>
+	<%= link_to 'Back To Recipe', recipe_path(@resource.recipe), 'data-button': 'blue' %>
+	<%= link_to('Edit', edit_recipe_step_path(@resource), 'data-button': 'green') if current_user.owns?(@resource.recipe) %>
+	<%= link_to('Delete', recipe_step_path(@resource), method: :delete, 'data-button': 'red') if current_user.owns?(@resource.recipe) %>
+</footer>

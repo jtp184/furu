@@ -1,0 +1,19 @@
+<table>
+	<caption><%= caption %></caption>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+	<% resources.each do |rs| %>
+		<tr>
+				<td><%= rs.title %></td>
+				<td><%= rs.description %></td>
+				<td><%= link_to '&rarr;'.html_safe, rs %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

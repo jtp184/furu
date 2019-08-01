@@ -1,0 +1,23 @@
+<h1><%= controller_name.humanize %></h1>
+<table>
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Recipes</th>
+			<th>Link</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @resources.each do |rs| %>
+		<tr>
+				<td><%= rs.username %></td>
+				<td><%= rs.recipes.count %></td>
+				<td><%= link_to '&rarr;'.html_safe, rs %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+<footer>
+	<%= link_to 'New', {action: :new}, {'data-button': 'green'} %>
+	<%= link_to 'Next Page', recipes_path(page: (@page + 1)), 'data-button': 'blue' %>
+</footer>

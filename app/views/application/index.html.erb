@@ -1,0 +1,7 @@
+<h1><%= controller_name.humanize %></h1>
+<%= render partial: 'shared/title_desc_table', locals: {resources: @resources, caption: controller_name.humanize } %>
+
+<footer>
+	<%= link_to 'New', {action: :new}, {'data-button': 'green'} %>
+	<%= link_to 'Next Page', recipes_path(page: (@page + 1)), 'data-button': 'blue' %>
+</footer>
